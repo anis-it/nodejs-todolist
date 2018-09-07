@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Ma todolist</title>
+    <style>
+        a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ma todolist</h1>
+    <ul>
+        <% for(var i=0; i < todolist.length; i++) { %>
+            <li><a href="/todo/supprimer/<%= i %>">✘</a> <%= todolist[i] %>
+            </li>
+            <% } %>
+    </ul>
+    <form method="post" action="/todo/ajouter">
+        <label for="newTodo">Que dois-je faire ? </label>
+        <input type="text" name="newTodo" id="newTodo" autofocus />
+        <input type="submit" value="Valider" />
+    </form>
+</body>
+
+</html>
